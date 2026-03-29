@@ -55,7 +55,7 @@ export function Header() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const websiteNameArr = ["R", "E", "E", "V", "I", "X", " ", "M", "E", "D", "I", "A"];
+  const websiteNameArr = ["R", "e", "e", "v", "i", "x", " ", "M", "e", "d", "i", "a"];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
