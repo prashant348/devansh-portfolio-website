@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,25 +62,41 @@ export function Header() {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between z-10">
           {/* Logo */}
-          <motion.button
-            variants={navVariants}
-            initial="hidden"
-            animate="visible"
-            onClick={() => scrollToSection('hero')}
-            className="text-xl sm:text-2xl tracking-wider text-white hover:text-white/80 transition-colors"
-          >
-            {websiteNameArr.map((char, idx) => {
-              return (
-                <motion.span
-                  key={idx}
-                  variants={charVariants}
+          <div className='flex gap-3 items-center'>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut"}}
+              className='w-8 h-8'
+            >
+              <Image
+                src={"/images/icon.jpeg"}
+                width={1080}
+                height={1080}
+                alt="REEVIX MEDIA LOGO"
+                className='h-full w-full'
+              />
+            </motion.div>
+            <motion.button
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+              onClick={() => scrollToSection('hero')}
+              className="text-xl sm:text-2xl tracking-wider text-white hover:text-white/80 transition-colors"
+            >
+              {websiteNameArr.map((char, idx) => {
+                return (
+                  <motion.span
+                    key={idx}
+                    variants={charVariants}
                   // className="inline-block"
-                >
-                  {char}
-                </motion.span>
-              )
-            })}
-          </motion.button>
+                  >
+                    {char}
+                  </motion.span>
+                )
+              })}
+            </motion.button>
+          </div>
 
           {/* Desktop Navigation */}
           <motion.div
