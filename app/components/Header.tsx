@@ -82,7 +82,7 @@ export function Header() {
               initial="hidden"
               animate="visible"
               onClick={() => scrollToSection('hero')}
-              className="text-xl sm:text-2xl tracking-wider text-white hover:text-white/80 transition-colors"
+              className="text-lg sm:text-2xl tracking-wider text-white hover:text-white/80 transition-colors"
             >
               {websiteNameArr.map((char, idx) => {
                 return (
